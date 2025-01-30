@@ -8,16 +8,14 @@ const UpdateBookWindow = ({ books, onClose, onUpdateBook }) => {
     author: "",
     status: "",
   });
-
-  // Handle book selection from dropdown
   const handleBookSelect = (e) => {
     const bookId = e.target.value;
     setSelectedBookId(bookId);
 
-    // Find the selected book from the list
-    const selectedBook = books.find((book) => book.id === bookId); // No need for parseInt if book.id is a string
+    
+    const selectedBook = books.find((book) => book.id === bookId);
     if (selectedBook) {
-      // Update the state with the selected book's details
+      
       setUpdatedBook({
         title: selectedBook.title,
         category: selectedBook.category,
@@ -25,7 +23,7 @@ const UpdateBookWindow = ({ books, onClose, onUpdateBook }) => {
         status: selectedBook.status,
       });
     } else {
-      // Reset the fields if no book is selected
+      
       setUpdatedBook({
         title: "",
         category: "",
@@ -35,7 +33,7 @@ const UpdateBookWindow = ({ books, onClose, onUpdateBook }) => {
     }
   };
 
-  // Handle input changes for the form fields
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUpdatedBook((prevState) => ({
@@ -44,7 +42,7 @@ const UpdateBookWindow = ({ books, onClose, onUpdateBook }) => {
     }));
   };
 
-  // Handle form submission
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     onUpdateBook(selectedBookId, updatedBook);

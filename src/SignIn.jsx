@@ -19,6 +19,8 @@ const SignIn = () => {
         });
         
         localStorage.setItem('token', response.data);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
         console.log('Logged in successfully:', response.data);
         navigate('/home'); 
       } catch (err) {

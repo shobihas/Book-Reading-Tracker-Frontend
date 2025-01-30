@@ -11,23 +11,16 @@ html {
   height: 100%;
 }
 
+a{
+  text-decoration: none; 
+  color: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
-.Logout{
-  margin-left: 1000px;
-}
-/* body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffeef0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
 body{
   background-image: "https://www.shutterstock.com/image-vector/library-bookcases-background-interior-bookshop-600nw-2455897043.jpg";
   background-size: cover;
@@ -323,29 +316,43 @@ body {
   width: 200px;
   background-color: #333;
   padding: 15px;
-  height: 100vh; /* Full height */
+  height: 100vh; 
 }
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adds space between buttons */
+  gap: 10px; 
+  
 }
 
-.buttons-container button {
+.buttons-container button,.buttons-container a{
   padding: 10px;
   background-color:#fb8282;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 150px; /* Fixed width for buttons */
+  width: 150px; 
 }
-.buttons-container button:hover {
+.buttons-container button:hover,.buttons-container a:hover {
   background-color:  #e55b5b;;
 }
+
+
 .content-container {
   display: flex;
   gap: 20px;}
+  .back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+  }
+  
+  .back-button img {
+    width: 30px;
+    height: 30px;
+  }
 .home input {
   width: 300px;
   padding: 10px;
@@ -370,9 +377,9 @@ body {
   position: relative;
   transition: 0.5s ease-out;
  overflow: hidden;
-  width: calc(33.333% - 30px); /* Ensures 3 cards per row with gap */
+  width: calc(33.333% - 30px); 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Ensures padding is included in width */
+  box-sizing: border-box; 
 }
 .book-card-details{
   color: black;
@@ -499,3 +506,134 @@ body {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+
+.profile-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffe6e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.profile-container h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Profile Image */
+.profile-img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+/* Profile Content */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Profile Fields */
+.profile-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.row label {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+}
+
+.row input {
+  flex: 2;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  text-align: center;
+}
+
+/* Loading & Error */
+.loading, .error {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-container {
+      width: 90%;
+      padding: 15px;
+  }
+
+  .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .row label {
+      text-align: center;
+  }
+}
+/* Back Button */
+/* .profile-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+} */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.profile-back-button {
+  position: absolute;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+}
+
+.profile-back-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-header h1 {
+  text-align: center;
+  flex-grow: 1;
+}
+

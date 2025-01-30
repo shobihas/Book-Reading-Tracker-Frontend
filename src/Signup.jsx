@@ -1,88 +1,81 @@
-import React from "react";
-import { useState } from "react";
-import MultiSelect from "multiselect-react-dropdown";
-const SignUp = (props) => {
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const SignUp = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [age, setAge] = useState(0);
     const [phone, setPhone] = useState("");
-    const [genres, setGenres] = useState([]);
     const [dob, setDOB] = useState("");
-    const [gender, setGeder] = useState("");
-    const [selectedgenres, setSelectedGenres] = useState([]);
-    
-    const genreslist = [
-        { label: "Fiction", value: "fiction" },
-        { label: "Non-Fiction", value: "nonfiction" },
-        { label: "Fantasy", value: "fantasy" },
-        { label: "Mystery", value: "mystery" },
-        { label: "Thriller", value: "thriller" },
-        { label: "Romance", value: "romance" }
-    ];
+    const [gender, setGender] = useState("");
+    const [error, setError] = useState("");
+    const navigate = useNavigate(); 
 
-    const addMemeber = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault();
-        if (name != '' && email != '' && password != '' && age != '' && phone != '' && dob != "" && gender != "") {
-            props.addToList(name, email, password, age, phone, dob, gender);
-            setName('');
-            setEmail('');
-            setPassword('');
-            setAge(0);
-            setPhone('');
-            setDOB('');
-            setGeder('');
+
+        
+        if (!name || !email || !password || !age || !phone || !dob || !gender) {
+            setError("Please fill all the fields.");
+            return;
         }
-        else {
-            alert("Please fill all the fields");
-        }
-    }
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    }
-    const handleEmailChanege = (e) => {
-        setEmail(e.target.value);
-    }
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    }
-    const handleAgeChange = (e) => {
-        setAge(e.target.value);
-    }
-    const handlePhoneChange = (e) => {
-        setPhone(e.target.value);
-    }
-    const handleGenresChange = (e) => {
-        const options = event.target.options;
-        const selected = [];
-        for (let i = 0; i < options.length; i++) {
-            if (options[i].selected) {
-                selected.push(options[i].value);
+
+        try {
+           
+            const response = await axios.post("http://localhost:3000/signup", {
+                name,
+                email,
+                password,
+                age,
+                phone,
+                dob,
+                gender,
+            });
+
+            
+            if (response.data.message === "User created successfully") {
+                alert("Signup successful! You can now log in.");
+                navigate("/signin"); 
             }
+        } catch (error) {
+            
+            if (error.response && error.response.data.message) {
+                setError(error.response.data.message); 
+            } else {
+                setError("An error occurred during signup. Please try again.");
+            }
+            console.error("Signup error:", error);
         }
-        setSelectedGenres(selected);
-    }
-    const handleGenderChange = (e) => {
-        setGeder(e.target.value);
-    }
-    const handleDOBChange = (e) => {
-        setDOB(e.target.value);
-    }
+    };
 
     return (
         <div className="signup-container">
             <div className="signup-card">
                 <h2 className="signup-title">SignUp</h2>
-                <form className="signup-form">
-                    {/* Left Section */}
+                {error && <p className="error-message">{error}</p>} 
+                <form className="signup-form" onSubmit={handleSignUp}>
                     <div className="form-left">
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
-                            <input type="text" id="name" placeholder="Enter your name" />
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input type="email" id="email" placeholder="Enter your email" />
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
@@ -90,11 +83,19 @@ const SignUp = (props) => {
                                 type="password"
                                 id="password"
                                 placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
                         <div className="form-group">
                             <label htmlFor="age">Age</label>
-                            <input type="number" id="age" placeholder="Enter your age" />
+                            <input
+                                type="number"
+                                id="age"
+                                placeholder="Enter your age"
+                                value={age}
+                                onChange={(e) => setAge(e.target.value)}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="phone">Phone No.</label>
@@ -102,35 +103,43 @@ const SignUp = (props) => {
                                 type="text"
                                 id="phone"
                                 placeholder="Enter your phone number"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                             />
                         </div>
                     </div>
                     <div className="form-right">
-                        
-                        <div className="form-group"> 
+                        <div className="form-group">
                             <label htmlFor="dob">Date of Birth</label>
                             <input
                                 type="date"
                                 id="dob"
                                 name="dob"
                                 className="input-date"
+                                value={dob}
+                                onChange={(e) => setDOB(e.target.value)}
                                 required
                             />
                         </div>
                         <div className="form-group">
                             <label htmlFor="gender">Gender</label>
-                            <select id="gender">
+                            <select
+                                id="gender"
+                                value={gender}
+                                onChange={(e) => setGender(e.target.value)}
+                            >
                                 <option value="">Select</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
+                        <button type="submit" className="signup-btn">
+                        SignUp
+                    </button>
                     </div>
+                    
                 </form>
-                <button type="submit" className="signup-btn" onClick={addMemeber}>
-                    SignUp
-                </button>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import AddBookWindow from './AddBookWindow.jsx';
 import UpdateBookWindow from './UpdateBookWindow.jsx';
 import DeleteBookWindow from './DeteBookWindow.jsx';
 import BookDetails from './BookDetails.jsx';
+import Profile from './Profile.jsx';
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <Routes>
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/updatebook" element={<UpdateBookWindow/>} />
         <Route path="/deletebook" element={<DeleteBookWindow/>} />
         <Route path="/book/:id" element={<BookDetails />} />
+        <Route path="/profile" element={<Profile />} />
         </Routes>
         </BrowserRouter>
     
