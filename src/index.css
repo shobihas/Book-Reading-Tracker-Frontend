@@ -1,0 +1,501 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+html {
+  background-image: url('https://www.shutterstock.com/image-vector/library-bookcases-background-interior-bookshop-600nw-2455897043.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.Logout{
+  margin-left: 1000px;
+}
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffeef0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+body{
+  background-image: "https://www.shutterstock.com/image-vector/library-bookcases-background-interior-bookshop-600nw-2455897043.jpg";
+  background-size: cover;
+  background-position:center;
+}
+
+.container {
+  width: 95%;
+  height: 90%;
+  background-color: #fff0f5;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 48px;
+  color: #333;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+
+.features-section {
+  flex: 1;
+  background-color: #ffe4e9;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #555;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.auth-section {
+  flex: 1;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.auth-button {
+  display: block;
+  width: 100px;
+  margin: 20px 0;
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff6b81;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.auth-button:hover {
+  background-color: #ff4a61;
+}
+
+.auth-card p {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #555;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signin-container {
+  width:200px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.signin-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width:320px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signin-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+input {
+  width: 250px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ff6b6b;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e55b5b;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffecec;
+}
+
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 550px;
+  
+}
+
+.signup-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  display: flex;
+  gap: 20px;
+}
+
+.form-left,.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-container input,.signup-container select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.signup-container input:focus,.signup-container select:focus {
+  border-color: #ff6b6b;
+}
+
+.signup-btn {
+  width: 100%;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.signup-btn:hover {
+  background-color: #e55b5b;
+}
+.gender-options {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.gender-options label {
+  font-size: 1rem;
+  display: flex;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  padding: 20px;
+  text-align: center;
+  background-color: whitesmoke;
+  border: 50px solid #fbb2ca;
+}
+.home-container{
+  display:flex;
+}
+.home header {
+  color: #333;
+}
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  padding: 15px;
+  height: 100vh; /* Full height */
+}
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds space between buttons */
+}
+
+.buttons-container button {
+  padding: 10px;
+  background-color:#fb8282;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px; /* Fixed width for buttons */
+}
+.buttons-container button:hover {
+  background-color:  #e55b5b;;
+}
+.content-container {
+  display: flex;
+  gap: 20px;}
+.home input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; 
+  flex:1;
+}
+
+.book-card {
+  background-color: #fff;
+  border: 3px dotted #fbb2ca;
+  border-radius: 4px;
+  padding: 15px;
+  position: relative;
+  transition: 0.5s ease-out;
+ overflow: hidden;
+  width: calc(33.333% - 30px); /* Ensures 3 cards per row with gap */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+.book-card-details{
+  color: black;
+ height: 100%;
+ gap: .5em;
+ display: grid;
+ place-content: center;
+}
+.card-button{
+ width: 60%;
+ border-radius: 1rem;
+ border: none;
+ background-color:#ff6b6b;;
+ color: #fff;
+ font-size: 1rem;
+ padding: .5rem 1rem;
+ position: absolute;
+ left: 50%;
+ bottom:-50px;
+ display: none;
+ transform: translateX(-50%);
+ opacity: 0;
+ transition: 0.3s ease-out;
+ cursor:pointer;
+}
+.book-card:hover{
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    
+   }
+
+.book-card:hover .card-button{
+  bottom: 10px;
+  display: block;
+ opacity: 1;
+ 
+}
+.book-card h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.book-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.dialog {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.dialog h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.dialog-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dialog-buttons button[type="submit"] {
+  background-color: #008bf8;
+  color: white;
+}
+
+.dialog-buttons button[type="button"] {
+  background-color: #ccc;
+  color: black;
+}
+.book-details {
+  padding: 20px;
+  background-color: #fbb2ca;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.book-details h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.book-details p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
