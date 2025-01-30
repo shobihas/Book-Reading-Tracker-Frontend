@@ -11,19 +11,19 @@ const SignUp = () => {
     const [dob, setDOB] = useState("");
     const [gender, setGender] = useState("");
     const [error, setError] = useState("");
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const handleSignUp = async (e) => {
         e.preventDefault();
 
-        
+
         if (!name || !email || !password || !age || !phone || !dob || !gender) {
             setError("Please fill all the fields.");
             return;
         }
 
         try {
-           
+
             const response = await axios.post("http://localhost:3000/signup", {
                 name,
                 email,
@@ -34,15 +34,15 @@ const SignUp = () => {
                 gender,
             });
 
-            
+
             if (response.data.message === "User created successfully") {
                 alert("Signup successful! You can now log in.");
-                navigate("/signin"); 
+                navigate("/signin");
             }
         } catch (error) {
-            
+
             if (error.response && error.response.data.message) {
-                setError(error.response.data.message); 
+                setError(error.response.data.message);
             } else {
                 setError("An error occurred during signup. Please try again.");
             }
@@ -54,7 +54,7 @@ const SignUp = () => {
         <div className="signup-container">
             <div className="signup-card">
                 <h2 className="signup-title">SignUp</h2>
-                {error && <p className="error-message">{error}</p>} 
+                {error && <p className="error-message">{error}</p>}
                 <form className="signup-form" onSubmit={handleSignUp}>
                     <div className="form-left">
                         <div className="form-group">
@@ -135,10 +135,10 @@ const SignUp = () => {
                             </select>
                         </div>
                         <button type="submit" className="signup-btn">
-                        SignUp
-                    </button>
+                            SignUp
+                        </button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

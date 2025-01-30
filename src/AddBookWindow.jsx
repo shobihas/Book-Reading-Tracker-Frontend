@@ -85,9 +85,9 @@ const AddBookWindow = ({ onClose, onAddBook }) => {
               onChange={(e) => setStatus(e.target.value)}
               required
             >
-              <option value="To Be Read">Available</option>
-              <option value="Completed">Borrowed</option>
-              <option value="On the Process">Borrowed</option>
+              <option value="To Be Read">To Be Read</option>
+              <option value="Completed">Completed</option>
+              <option value="On the Process">On the Process</option>
             </select>
           </div>
           <div className="dialog-buttons">

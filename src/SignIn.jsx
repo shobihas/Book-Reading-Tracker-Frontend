@@ -8,24 +8,25 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-        const response = await axios.post('http://localhost:3000/signin', {
-          email,
-          password,
-        });
-        
-        localStorage.setItem('token', response.data);
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-        console.log('Logged in successfully:', response.data);
-        navigate('/home'); 
-      } catch (err) {
-        setError(err.response?.data?.message || 'Something went wrong');
-      }
+      const response = await axios.post('http://localhost:3000/signin', {
+        email,
+        password,
+      });
+
+
+      localStorage.setItem('token', response.data);
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+      console.log('Logged in successfully:', response.data);
+      navigate('/home');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Something went wrong');
+    }
   }
 
   return (
@@ -59,7 +60,7 @@ const SignIn = () => {
           </div>
 
           {error && <p className="error-message">{error}</p>}
-          <button type="submit"className="auth-button">Signin</button>
+          <button type="submit" className="auth-button">Signin</button>
 
         </form>
         <p className="signup-link">

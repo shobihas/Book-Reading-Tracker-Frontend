@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import BookCard from './BookCard';
 import AddBookWindow from './AddBookWindow';
 import UpdateBookWindow from './UpdateBookWindow';
 import DeleteBookWindow from './DeteBookWindow';
 import axios from "axios";
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -69,19 +68,19 @@ const Home = () => {
         updatedBook,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-  
-    
+
+
       const response = await axios.get("https://book-reading-tracker.onrender.com/api/books", {
         headers: { Authorization: `Bearer ${token}` },
       });
-  
-      setBooks(response.data); 
+
+      setBooks(response.data);
       closeUpdateBookDialog();
     } catch (error) {
       console.error("Error updating book:", error.response?.data || error.message);
     }
   };
-  
+
   const deleteBook = async (bookId) => {
     console.log("Deleting book with id:", bookId);
     const token = localStorage.getItem("token");
@@ -113,16 +112,16 @@ const Home = () => {
     }
   };
 
-  
+
   const searchBooks = (searchTerm) => {
     return books.filter((book) =>
       book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   };
-  const searchUser=(email)=>{
-    return useResolvedPath.finf((user)=>
-    user.email.toLowerCase().includes(email.toLowerCase()));
-  }
+  // const searchUser = (email) => {
+  //   return useResolvedPath.finf((user) =>
+  //     user.email.toLowerCase().includes(email.toLowerCase()));
+  // }
   const filteredBooks = searchBooks(searchTerm);
 
   return (
